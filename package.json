@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run serve-dev",
+    "build": "npm run assemble-release",
+    "assemble-release": "./node_modules/.bin/webpack --config ./webpack.prod.js --env.NODE_ENV=production --env.output=dist --progress",
+    "serve-dev": "./node_modules/.bin/webpack-dev-server --open --colors --hot --inline --config ./webpack.dev.js --env.NODE_ENV=development --env.output=dist --progress"
   },
   "keywords": [],
   "author": {
@@ -15,6 +18,9 @@
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.2",
