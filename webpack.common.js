@@ -8,7 +8,7 @@ const APP_NAME = "Todo with persist store";
 module.exports = env => ({
 	mode: "production",
 	entry: {
-		main: ["./src/index.ts"]
+		main: ["@babel/polyfill", "./src/index.tsx"]
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
@@ -28,18 +28,14 @@ module.exports = env => ({
 	},
 	devtool: "source-map",
 	resolve: {
-		extensions: [".ts", ".tsx"]
+		extensions: ['.ts', '.tsx', '.js', '.jsx']
 	},
 	module: {
 		rules: [
 			{
 				test: /\.ts(x?)$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: "ts-loader"
-					}
-				]
+                exclude: /node_modules/,
+                loaders: ["babel-loader", "ts-loader"]
 			},
 			{
 				test: /\.html$/,
@@ -65,6 +61,24 @@ module.exports = env => ({
                 {
                   loader: "sass-loader",
                   options: { sourceMap: true }
+                }
+              ]
+            },
+            {
+              test: /\.(ico|png|gif|jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+              use: [
+                {
+                  loader: "url-loader",
+                  options: {
+                    name: "[name].[ext]",
+                    outputPath: (url, resourcePath, context) => {
+                      if (env.NODE_ENV === "development") {
+                        const relativePath = path.relative(context, resourcePath);
+                        return `/${relativePath}`;
+                      }
+                      return `/assets/${path.basename(resourcePath)}`;
+                    }
+                  }
                 }
               ]
             }
