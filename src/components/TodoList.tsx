@@ -1,10 +1,10 @@
 import * as React from "react";
 
-interface ITodoProps {
+interface ITodoListProps {
 
 };
 
-export class Todo extends React.Component<ITodoProps, {}> {
+export class TodoList extends React.Component<ITodoListProps, {}> {
     render() {
         return <div>
             todo
