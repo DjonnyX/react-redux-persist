@@ -1,3 +1,3 @@
-export interface IFilterStoreState {
-  
-}
+import IFilterStoreState from "./IFilterStoreState";
+
+export { IFilterStoreState };
