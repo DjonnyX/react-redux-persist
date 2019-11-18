@@ -1,5 +1,10 @@
 import { Reducer } from "redux";
-import { FilterActionTypes, FilterAction, IFilterStoreState, FilterPriorityTypes } from "../../todolist/filters";
+import {
+	FilterActionTypes,
+	FilterAction,
+	IFilterStoreState,
+	FilterPriorityTypes
+} from "../../todolist/filters";
 
 const initialState: IFilterStoreState = {
 	selectedFilter: FilterPriorityTypes.ALL

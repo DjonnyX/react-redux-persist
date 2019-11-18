@@ -1,9 +1,16 @@
 import * as React from "react";
+import { ITaskItemModel } from "src/models";
 
-interface ITodoListProps {}
+interface ITodoListProps {
+	tasks: ITaskItemModel[];
+}
 
 export default class TodoList extends React.Component<ITodoListProps, {}> {
 	render() {
-		return <div>todo list</div>;
+		const { tasks } = this.props;
+
+		return <div>{tasks.map(task => {
+            
+        })}</div>;
 	}
 }

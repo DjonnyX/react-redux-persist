@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { TodoEditor, TodoList } from "./components";
+import { TodoEditor } from "./components";
+import VisibleTodoList from "./containers/TodoEditor";
 
 export default function Router(): JSX.Element {
 	return (
@@ -20,7 +21,7 @@ export default function Router(): JSX.Element {
 						<TodoEditor />
 					</Route>
 					<Route path="/">
-						<TodoList />
+						<VisibleTodoList />
 					</Route>
 				</Switch>
 			</div>
