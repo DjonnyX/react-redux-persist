@@ -1,1 +1,4 @@
 node_modules
+yarn-error.*
+__mocks__
+dist
