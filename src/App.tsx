@@ -2,13 +2,13 @@ import * as React from "react";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { store, persistor } from "./store";
-import { TodoList } from "./components/TodoList";
+import Router from "./Router";
 
 const App = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <TodoList />
+        <Router />
       </PersistGate>
     </Provider>
   );

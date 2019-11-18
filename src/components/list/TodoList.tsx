@@ -4,10 +4,10 @@ interface ITodoListProps {
 
 };
 
-export class TodoList extends React.Component<ITodoListProps, {}> {
+export default class TodoList extends React.Component<ITodoListProps, {}> {
     render() {
         return <div>
-            todo
+            todo list
         </div>;
     }
 }
