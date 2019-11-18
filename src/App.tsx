@@ -5,13 +5,13 @@ import { store, persistor } from "./store";
 import Router from "./Router";
 
 const App = () => {
-  return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <Router />
-      </PersistGate>
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<PersistGate persistor={persistor}>
+				<Router />
+			</PersistGate>
+		</Provider>
+	);
 };
 
 export default App;
